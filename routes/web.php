@@ -11,6 +11,10 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/integration', function () {
+    return view('layouts.integration');
+});
  
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');

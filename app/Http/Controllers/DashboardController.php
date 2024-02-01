@@ -11,7 +11,7 @@ class DashboardController extends Controller
     //
     public function showdashboard(){
         $customerCount = Customer::count(); 
-        $rentalCount = Customer::count(); 
+        $rentalCount = Rental::count(); 
         $rental = Rental::all(); 
 
 

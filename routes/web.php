@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CottageController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RentalController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
  
@@ -56,16 +55,6 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('rentals.edit');
         Route::put('edit/{id}', 'update')->name('rentals.update');
         Route::delete('destroy/{id}', 'destroy')->name('rentals.destroy');
-    });
-
-    Route::controller(PaymentController::class)->prefix('payment')->group(function () {
-        Route::get('', 'index')->name('payment');
-        Route::get('create', 'create')->name('payment.create');
-        Route::post('store', 'store')->name('payment.store');
-        Route::get('show/{id}', 'show')->name('payment.show');
-        Route::get('edit/{id}', 'edit')->name('payment.edit');
-        Route::put('edit/{id}', 'update')->name('payment.update');
-        Route::delete('destroy/{id}', 'destroy')->name('payment.destroy');
     });
 
     Route::controller(AdminController::class)->prefix('admin')->group(function () {
